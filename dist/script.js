@@ -7,7 +7,6 @@ let count = 0; // initialize counter value to 0;
 function displayCounter() {
     // Since, All three event listener usage this, we make a seperate function to avoid redundency and Follow the DRY principle.
     // counterValue.textContent = count; // Type 'number' is not assignable to type 'string'. So, convert it to string
-    // counterValue.textContent = count.toString(); // All three event listener use this. This is redundent. So, apply Dry Principle.
     counterValue.textContent = count.toString();
 }
 incrementBtn.addEventListener('click', () => {
@@ -18,7 +17,7 @@ decrementBtn.addEventListener('click', () => {
     if (count > 0) {
         count--;
     }
-    // counterValue.textContent = count.toString();
+    // counterValue.textContent = count.toString(); // All three event listener use this. This is redundent. So, apply Dry Principle and create a function displayCounter() to display counter value
     displayCounter();
 });
 resetBtn.addEventListener('click', () => {
